@@ -6,16 +6,21 @@
 
 }
 
-#button{
+#button1{
     margin:30px 5% 0 5%;
    
+}
+#button1:hover{
+    color:#466AB3;
+    background-color: #f1f1f1; 
+    box-shadow: 0 0 10px rgba(70, 106, 179, 0.726)
 }
 
 header {
     margin: 0;
     width: 100%;
     height: 100px;
-    box-shadow: 0 0 20px grey;
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.541);
     margin-bottom: 40px;
     display: flex;
     justify-content: space-between;
@@ -25,6 +30,26 @@ header {
 .DrugList{
     display: flex;
     justify-content:space-between;
-    margin: 0 10px 
+    margin : auto;
+    margin-bottom: 10px;
+
 }
+
+#save:hover{
+    color:#466AB3;
+    background-color: #f1f1f1; 
+    box-shadow: 0 0 10px rgba(70, 106, 179, 0.726)
+}
+#plus:hover{
+    
+    color: rgb(0, 60, 100);
+    
+}
+
+.print:hover{
+    color: rgb(0, 60, 100);
+}
+
+
+
 

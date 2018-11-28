@@ -19,7 +19,8 @@ outline:none;
 padding: 0px 10px;
 font-size: 0.75rem;
 margin-bottom: 20px
-
+&:hover {
+border: 1.5px solid rgba(70, 106, 179, 0.726);
 `
 
 let Button = styled.button`
@@ -27,7 +28,7 @@ background-color: #466AB3;
 padding: 10px;
 border-radius: 3px;
 border: none;
-color: white;
+color: #f2f2f2;
 font-weight: bold;
 height:40px
 min-width:100px;
@@ -64,10 +65,8 @@ padding: 10px;
 border-radius: 3px;
 border: none;
 color: #466AB3;
-margin-bottom: 20px;
 font-weight:bold;
 width:90%;
-margin : auto;
 padding: 20px 10px
 text-transform: capitalize;
 
@@ -120,30 +119,35 @@ class App extends React.Component {
         })
     }
 
+    print(){
+            window.print()
+    }
 
     render() {
         return (
             <div>
                 <header>
                     <MyClinic>My Clinic</MyClinic>
-                    <Button id="button" onClick={() => { this.modalStatus() }}>New prescription</Button>
+                    <Button id="button1" onClick={() => { this.modalStatus() }}>New prescription</Button>
 
 
                     <ReactModal
                         isOpen={this.state.modal}
                         contentLabel="MODAL">
+
                         <Input type="text" placeholder="PATIENT NAME" onChange={(event) => {
                             this.setState({
                                 name: event.target.value
                             })
                         }} value={this.state.name} />
+
                         <Input type="number" placeholder="PATIENT AGE" onChange={(event) => {
                             this.setState({
                                 age: event.target.value
                             })
                         }} value={this.state.age} />
 
-                        <Autocomplete
+                        <Autocomplete 
                             title="DRUGS"
                             onChange={changedItem => {
                                 changeItem = changedItem
@@ -164,14 +168,14 @@ class App extends React.Component {
                                             })}
                                         />
                                         <ICON>
-                                            <Icon marginBottom={20} icon="plus" color="466AB3" size={30} margin={0} padding={0} onClick={() => {
+                                            <Icon id="plus" marginBottom={20} icon="plus" color="466AB3" size={30} margin={0} padding={0} onClick={() => {
                                                 drugAlt.push(changeItem)
                                                 this.setState({
                                                     fireDrug: drugAlt
                                                 })
                                             }} />
-                                            <Drugs>{this.state.fireDrug + ''}</Drugs>
                                         </ICON>
+                                        <Drugs>{this.state.fireDrug + ''}</Drugs>
                                     </div>
 
                                 )
@@ -182,9 +186,11 @@ class App extends React.Component {
 
 
                         <Button id="save" onClick={() => {
+                            drugAlt=[];
                             this.setState({
                                 fireDrug: [],
-                                name: ''
+                                name: '',
+                                age:''
                             })
                             this.modalStatus()
                             if (this.state.name != '') {
@@ -204,9 +210,10 @@ class App extends React.Component {
                         return (
                             <DrugList className="DrugList" key={i}>
                                 patient name : {item.name}
-                                <Icon key={i} marginRight={10} icon="print" size={20} onClick={window.print}/>
+                                <Icon className="print" key={i} marginRight={10} icon="print" size={20} onClick={()=>{
+                                    this.print()
+                                }}/>
                             </DrugList>
-
                         )
                     })}
                 </div>
