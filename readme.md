@@ -1,4 +1,4 @@
-## you could use the site here
+## Live Demo
 http://myclinic.surge.sh
 
 ## you have to do this before start
