@@ -1,5 +1,3 @@
-# THIS IS MyClinic TASK
-Ali Hamandi
 
 ##you could use the site here
 http://myclinic.surge.sh
