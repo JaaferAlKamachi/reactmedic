@@ -13,7 +13,8 @@
 #button1:hover{
     color:#466AB3;
     background-color: #f1f1f1; 
-    box-shadow: 0 0 10px rgba(70, 106, 179, 0.726)
+    box-shadow: 0 0 10px rgba(70, 106, 179, 0.726);
+
 }
 
 header {
@@ -45,9 +46,21 @@ header {
     color: rgb(0, 60, 100);
     
 }
-
+.print{
+    margin-top: 20px;
+}
 .print:hover{
     color: rgb(0, 60, 100);
+}
+
+#myClinic{
+    text-align: center;
+    color: #466AB3;
+    font-weight: bold;
+    height:40px;
+    font-size:3rem;
+    margin-left:5%;
+    margin-top:10px
 }
 
 
